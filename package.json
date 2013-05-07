@@ -1,0 +1,35 @@
+{
+  "name" : "environmentize",
+  "description" : "Utilities for handling differences between environments.",
+  "version" : "0.0.1",
+  "author" : {
+    "name" : "Mathias Kretschek",
+    "email" : "mathias@kretschek.com.br",
+    "web" : "http://mathias.kretschek.com.br"
+  },
+  "contributors" : [
+    {
+      "name" : "Mathias Kretschek",
+      "email" : "mathias@yblok.com"
+    }
+  ],
+  "bugs" : "https://github.com/mkretschek/node-environmentize/issues",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mkretschek/node-environmentize"
+  },
+  "scripts" : {
+    "test" : "mocha -R spec -u bdd"
+  },
+  "dependencies" : {
+    "underscore" : "1.4"
+  },
+  "devDependencies" : {
+    "mocha" : "1.9",
+    "expect.js" : "0.2"
+  },
+  "engine" : {
+    "node" : "0.10"
+  },
+  "main" : "./index.js"
+}
