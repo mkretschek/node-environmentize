@@ -85,106 +85,108 @@ describe('environmentize', function () {
     });
 
 
-    it('is an object', function () {
-      expect(e12e.env).to.be.an('object');
-    });
-
-    
-    describe('#isProduction()', function () {
-      it('is accessible', function () {
-        expect(e12e.env.isProduction).not.to.be(undefined);
-      });
-
-
-      it('is a function', function () {
-        expect(e12e.env.isProduction).to.be.a('function');
-      });
-
-
-      it('returns true in production environment', function () {
-        setEnv('production');
-        expect(e12e.env.isProduction()).to.be(true);
-      });
-
-
-      it('returns false if not in production environment', function () {
-        setEnv('other');
-        expect(e12e.env.isProduction()).to.be(false);
-      });
-    });
-    
-    
-    describe('#isDevelopment()', function () {
-      it('is accessible', function () {
-        expect(e12e.env.isDevelopment).not.to.be(undefined);
-      });
-
-
-      it('is a function', function () {
-        expect(e12e.env.isDevelopment).to.be.a('function');
-      });
-
-
-      it('returns true in development environment', function () {
-        setEnv('development');
-        expect(e12e.env.isDevelopment()).to.be(true);
-      });
-
-
-      it('returns false if not in development environment', function () {
-        setEnv('other');
-        expect(e12e.env.isDevelopment()).to.be(false);
-      });
-    });
-    
-    
-    describe('#isTest()', function () {
-      it('is accessible', function () {
-        expect(e12e.env.isTest).not.to.be(undefined);
-      });
-
-
-      it('is a function', function () {
-        expect(e12e.env.isTest).to.be.a('function');
-      });
-
-
-      it('returns true in test environment', function () {
-        setEnv('test');
-        expect(e12e.env.isTest()).to.be(true);
-      });
-
-
-      it('returns false if not in test environment', function () {
-        setEnv('other');
-        expect(e12e.env.isTest()).to.be(false);
-      });
-    });
-    
-    
-    describe('#isStage()', function () {
-      it('is accessible', function () {
-        expect(e12e.env.isStage).not.to.be(undefined);
-      });
-
-
-      it('is a function', function () {
-        expect(e12e.env.isStage).to.be.a('function');
-      });
-
-
-      it('returns true in stage environment', function () {
-        setEnv('stage');
-        expect(e12e.env.isStage()).to.be(true);
-      });
-
-
-      it('returns false if not in stage environment', function () {
-        setEnv('other');
-        expect(e12e.env.isStage()).to.be(false);
-      });
+    it('returns the current environment', function () {
+      expect(e12e.env).to.be('test');
+      setEnv('production');
+      expect(e12e.env).to.be('production');
     });
   }); // #env
+
+  
+  describe('#isProduction()', function () {
+    it('is accessible', function () {
+      expect(e12e.isProduction).not.to.be(undefined);
+    });
+
+
+    it('is a function', function () {
+      expect(e12e.isProduction).to.be.a('function');
+    });
+
+
+    it('returns true in production environment', function () {
+      setEnv('production');
+      expect(e12e.isProduction()).to.be(true);
+    });
+
+
+    it('returns false if not in production environment', function () {
+      setEnv('other');
+      expect(e12e.isProduction()).to.be(false);
+    });
+  }); // #isProduction
+  
+  
+  describe('#isDevelopment()', function () {
+    it('is accessible', function () {
+      expect(e12e.isDevelopment).not.to.be(undefined);
+    });
+
+
+    it('is a function', function () {
+      expect(e12e.isDevelopment).to.be.a('function');
+    });
+
+
+    it('returns true in development environment', function () {
+      setEnv('development');
+      expect(e12e.isDevelopment()).to.be(true);
+    });
+
+
+    it('returns false if not in development environment', function () {
+      setEnv('other');
+      expect(e12e.isDevelopment()).to.be(false);
+    });
+  }); // #isDevelopment()
+  
+  
+  describe('#isTest()', function () {
+    it('is accessible', function () {
+      expect(e12e.isTest).not.to.be(undefined);
+    });
+
+
+    it('is a function', function () {
+      expect(e12e.isTest).to.be.a('function');
+    });
+
+
+    it('returns true in test environment', function () {
+      setEnv('test');
+      expect(e12e.isTest()).to.be(true);
+    });
+
+
+    it('returns false if not in test environment', function () {
+      setEnv('other');
+      expect(e12e.isTest()).to.be(false);
+    });
+  }); // #isTest()
+  
+  
+  describe('#isStage()', function () {
+    it('is accessible', function () {
+      expect(e12e.isStage).not.to.be(undefined);
+    });
+
+
+    it('is a function', function () {
+      expect(e12e.isStage).to.be.a('function');
+    });
+
+
+    it('returns true in stage environment', function () {
+      setEnv('stage');
+      expect(e12e.isStage()).to.be(true);
+    });
+
+
+    it('returns false if not in stage environment', function () {
+      setEnv('other');
+      expect(e12e.isStage()).to.be(false);
+    });
+  }); // #isStage()
 
 
   describe('#setup()', function () {
