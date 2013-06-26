@@ -26,7 +26,8 @@
   },
   "devDependencies" : {
     "mocha" : "1.9",
-    "expect.js" : "0.2"
+    "expect.js" : "0.2",
+    "express" : "3.0"
   },
   "engine" : {
     "node" : "0.10"

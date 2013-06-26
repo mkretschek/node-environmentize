@@ -78,5 +78,161 @@ describe('environmentize', function () {
     expect(doIt).to.throwError();
   });
 
+
+  describe('#env', function () {
+    it('is accessible', function () {
+      expect(e12e.env).not.to.be(undefined);
+    });
+
+
+    it('is an object', function () {
+      expect(e12e.env).to.be.an('object');
+    });
+
+    
+    describe('#isProduction()', function () {
+      it('is accessible', function () {
+        expect(e12e.env.isProduction).not.to.be(undefined);
+      });
+
+
+      it('is a function', function () {
+        expect(e12e.env.isProduction).to.be.a('function');
+      });
+
+
+      it('returns true in production environment', function () {
+        setEnv('production');
+        expect(e12e.env.isProduction()).to.be(true);
+      });
+
+
+      it('returns false if not in production environment', function () {
+        setEnv('other');
+        expect(e12e.env.isProduction()).to.be(false);
+      });
+    });
+    
+    
+    describe('#isDevelopment()', function () {
+      it('is accessible', function () {
+        expect(e12e.env.isDevelopment).not.to.be(undefined);
+      });
+
+
+      it('is a function', function () {
+        expect(e12e.env.isDevelopment).to.be.a('function');
+      });
+
+
+      it('returns true in development environment', function () {
+        setEnv('development');
+        expect(e12e.env.isDevelopment()).to.be(true);
+      });
+
+
+      it('returns false if not in development environment', function () {
+        setEnv('other');
+        expect(e12e.env.isDevelopment()).to.be(false);
+      });
+    });
+    
+    
+    describe('#isTest()', function () {
+      it('is accessible', function () {
+        expect(e12e.env.isTest).not.to.be(undefined);
+      });
+
+
+      it('is a function', function () {
+        expect(e12e.env.isTest).to.be.a('function');
+      });
+
+
+      it('returns true in test environment', function () {
+        setEnv('test');
+        expect(e12e.env.isTest()).to.be(true);
+      });
+
+
+      it('returns false if not in test environment', function () {
+        setEnv('other');
+        expect(e12e.env.isTest()).to.be(false);
+      });
+    });
+    
+    
+    describe('#isStage()', function () {
+      it('is accessible', function () {
+        expect(e12e.env.isStage).not.to.be(undefined);
+      });
+
+
+      it('is a function', function () {
+        expect(e12e.env.isStage).to.be.a('function');
+      });
+
+
+      it('returns true in stage environment', function () {
+        setEnv('stage');
+        expect(e12e.env.isStage()).to.be(true);
+      });
+
+
+      it('returns false if not in stage environment', function () {
+        setEnv('other');
+        expect(e12e.env.isStage()).to.be(false);
+      });
+    });
+  }); // #env
+
+
+  describe('#setup()', function () {
+    var express = require('express');
+
+
+    it('is accessible', function () {
+      expect(e12e.setup).not.to.be(undefined);
+    });
+
+
+    it('is a function', function () {
+      expect(e12e.setup).to.be.a('function');
+    });
+
+
+    it('sets the `e12e` property in an express.js app locals', function () {
+      var app = express();
+
+      expect(app.locals).not.to.have.property('e12e');
+
+      e12e.setup(app);
+      expect(app.locals).to.have.property('e12e');
+    });
+
+
+    it('creates a simplified object in locals', function () {
+      var app = express();
+      e12e.setup(app);
+
+      // The app.locals' e12e object should not be a function
+      expect(app.locals.e12e).to.be.an('object');
+      expect(app.locals.e12e).not.to.be(e12e);
+
+      // app.locals' e12e should have an `env` object like the regular e12e
+      expect(app.locals.e12e).to.have.property('env');
+      expect(app.locals.e12e.env).to.be(e12e.env);
+
+      // app.locals' e12e should not have a setup method
+      expect(app.locals.e12e).not.to.have.property('setup');
+    });
+
+
+    it('requires an object with a locals property', function () {
+      function fail() { e12e.setup({}); }
+      expect(fail).to.throwError();
+    });
+  }); // #setup()
+
 }); // environmentize
 
