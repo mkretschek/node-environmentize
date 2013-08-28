@@ -10,21 +10,19 @@ your code runs in. For example, you probably have different database
 settings for each environment. Or you probably want to use an analytics
 code only in production. `environmentize` helps you getting it done:
 
-  config.DB_HOST = e12e({
-    production : '123.456.789.3',
-    staging : '123.456.789.4'
-  }, '127.0.0.1');
+    config.DB_HOST = e12e({
+      production : '123.456.789.3',
+      staging : '123.456.789.4'
+    }, '127.0.0.1');
 
-
-  config.ANALYTICS_ID = e12e.production('X-12345-6', null);
-
+    config.ANALYTICS_ID = e12e.production('X-12345-6', null);
 
 Or maybe there's some code you want to run only while in development:
 
-  e12e.development(function () {
-    // This will run only if you are in development.
-    console.log('This is the development environment.');
-  });
+    e12e.development(function () {
+      // This will run only if you are in development.
+      console.log('This is the development environment.');
+    });
 
 
 
@@ -33,7 +31,7 @@ Installation
 
 Install from NPM:
 
-  npm install environmentize
+    npm install environmentize
 
 
 Usage
@@ -41,15 +39,13 @@ Usage
 
 Require it:
 
-  var e12e = require('environmentize');
-
+    var e12e = require('environmentize');
 
 Get the current environment:
 
-  e12e(); // 'development'
-  // or
-  e12e.env; // 'development'
-
+    e12e(); // 'development'
+    // or
+    e12e.env; // 'development'
 
 `environmentize` will use the `NODE_ENV` environment variable
 to get the environment in which the code is running. You shouldn't ever
@@ -63,83 +59,77 @@ in the `'development'` environment.
 
 Check if the code is being run in a given environment:
 
-  e12e('development'); // true
-  e12e('integration'); // false
+    e12e('development'); // true
+    e12e('integration'); // false
 
-  // You may use an array of environments as well
-  e12e(['test', 'development']); // true
-  e12e(['staging', 'production']); // false
-
+    // You may use an array of environments as well
+    e12e(['test', 'development']); // true
+    e12e(['staging', 'production']); // false
 
 Get a value from an environment-value map:
 
-  e12e({
-    development : 'foo',
-    production : 'bar'
-  }); // 'foo'
+    e12e({
+      development : 'foo',
+      production : 'bar'
+    }); // 'foo'
 
-  e12e({
-    integration : 'foo',
-    production : 'bar'
-  }); // undefined
+    e12e({
+      integration : 'foo',
+      production : 'bar'
+    }); // undefined
 
-  // You can set a fallback value
-  e12e({
-    integration : 'foo',
-    production : 'bar'
-  }, 'baz'); // 'baz'
-
+    // You can set a fallback value
+    e12e({
+      integration : 'foo',
+      production : 'bar'
+    }, 'baz'); // 'baz'
 
 Get a value for a specific environment:
 
-  e12e('development', 'foo'); // 'foo'
-  e12e('integration', 'foo'); // undefined
+    e12e('development', 'foo'); // 'foo'
+    e12e('integration', 'foo'); // undefined
 
-  // With a fallback
-  e12e('integration', 'foo', 'bar'); // 'bar'
+    // With a fallback
+    e12e('integration', 'foo', 'bar'); // 'bar'
 
-  // This works with multiple environments too
-  e12e(['test', 'development'], 'foo'); // 'foo'
-  e12e(['staging', 'production'], 'foo'); // undefined
-  e12e(['staging', 'production'], 'foo', 'bar'); // 'bar'
-
+    // This works with multiple environments too
+    e12e(['test', 'development'], 'foo'); // 'foo'
+    e12e(['staging', 'production'], 'foo'); // undefined
+    e12e(['staging', 'production'], 'foo', 'bar'); // 'bar'
 
 Values may be functions, in which case they are called without arguments
 and the returned value is used:
 
-  e12e('development', function () { return 'foo'; }); // 'foo'
+    e12e('development', function () { return 'foo'; }); // 'foo'
 
-  // Works for fallbacks too
-  e12e('integration', function () { return 'foo'; }, function () { return 'bar'; }); // 'bar'
+    // Works for fallbacks too
+    e12e('integration', function () { return 'foo'; }, function () { return 'bar'; }); // 'bar'
 
-  // And for values in an environment-value map
-  e12e({
-    development : function () { return 'foo'; }
-  }); // 'foo'
-
+    // And for values in an environment-value map
+    e12e({
+      development : function () { return 'foo'; }
+    }); // 'foo'
 
 This way you can run a piece of code only in certain environments:
 
-  e12e('development', function () {
-    // Do something that should only be done during development.
-    console.log('This is the development environment');
-  });
-
+    e12e('development', function () {
+      // Do something that should only be done during development.
+      console.log('This is the development environment');
+    });
 
 Environmentize also sets a method for each environment, which avoids the
 need for the first argument in some cases:
 
-  e12e.development('foo'); // 'foo'
-  e12e.integration('foo', 'bar'); // 'bar'
-
+    e12e.development('foo'); // 'foo'
+    e12e.integration('foo', 'bar'); // 'bar'
 
 This might be handy if you need to run some code only in a specific 
 environment:
 
-  e12e.production(function () {
-    // This code will run only in production.
-    app.use(toobusy());
-  });
+    e12e.production(function () {
+      // This code will run only in production.
+      app.use(toobusy());
+    });
 
 
 Configuration   {#configuration}
@@ -147,16 +137,16 @@ Configuration   {#configuration}
 
 You can use your own environment definitions using `e12e.setup()`:
 
-  e12e.setup({
-    environments : ['dev', 'ci', 'stg', 'prod'],
-    defaultEnv : 'dev'
-  });
+    e12e.setup({
+      environments : ['dev', 'ci', 'stg', 'prod'],
+      defaultEnv : 'dev'
+    });
 
-  e12e.dev('foo'); // 'foo'
-  e12e.ci('foo', 'bar'); // 'bar'
+    e12e.dev('foo'); // 'foo'
+    e12e.ci('foo', 'bar'); // 'bar'
 
-  // Original environment methods are removed
-  e12e.development('foo'); // throws error
+    // Original environment methods are removed
+    e12e.development('foo'); // throws error
 
 
 Testing
@@ -164,7 +154,7 @@ Testing
 
 Environmentize's tests are written in [mocha][] and can be run with:
 
-  npm test
+    npm test
 
 
 Contributing
