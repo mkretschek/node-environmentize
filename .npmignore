@@ -1,4 +1,6 @@
 test/
+logs/
 .git*
 .jshintrc
 *.swp
+*.log
