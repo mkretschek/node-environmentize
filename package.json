@@ -1,36 +1,42 @@
 {
-  "name" : "environmentize",
-  "description" : "Utilities for handling differences between environments.",
-  "version" : "0.0.1",
-  "author" : {
-    "name" : "Mathias Kretschek",
-    "email" : "mathias@kretschek.com.br",
-    "web" : "http://mathias.kretschek.com.br"
-  },
-  "contributors" : [
-    {
-      "name" : "Mathias Kretschek",
-      "email" : "mathias@yblok.com"
-    }
+  "name": "environmentize",
+  "description": "Utilities for handling differences between environments.",
+  "version": "0.1.0",
+  "author": "Mathias Kretschek <mathias@kretschek.com.br> (http://mathias.ms)",
+  "contributors": [
+    "Mathias Kretschek <mathias@kretschek.com.br>"
   ],
-  "bugs" : "https://github.com/mkretschek/node-environmentize/issues",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/mkretschek/node-environmentize"
+  "bugs": {
+    "url": "https://github.com/mkretschek/node-environmentize/issues"
   },
-  "scripts" : {
-    "test" : "mocha -R spec -u bdd"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkretschek/node-environmentize"
   },
-  "dependencies" : {
-    "underscore" : "1.4"
+  "scripts": {
+    "test": "make test",
+    "prepublish": "make check"
   },
-  "devDependencies" : {
-    "mocha" : "1.9",
-    "expect.js" : "0.2",
-    "express" : "3.0"
+  "dependencies": {
+    "underscore": "~1.5.1"
   },
-  "engine" : {
-    "node" : "0.10"
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "express": "~3.3.5",
+    "jshint": "~2.1.10",
+    "mocha": "~1.12.0"
   },
-  "main" : "./index.js"
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "main": "./index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "environment",
+    "env",
+    "configuration"
+  ],
+  "license": "MIT"
 }

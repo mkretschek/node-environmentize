@@ -1,0 +1,15 @@
+{
+  "indent" : 2,
+  "node" : true,
+  "eqeqeq" : true,
+  "latedef" : true,
+  "noarg" : true,
+  "noempty" : true,
+  "plusplus" : true,
+  "quotmark" : true,
+  "undef" : true,
+  "unused" : true,
+  "strict" : true,
+  "trailing" : true,
+  "maxlen" : 80
+}
