@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
-    "express": "~3.3.5",
     "jshint": "~2.1.10",
     "mocha": "~1.12.0"
   },
