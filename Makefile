@@ -10,6 +10,9 @@ lint:
 	@$(CURDIR)/node_modules/.bin/jshint $(CURDIR)/test/*
 	@echo "\033[0;32m[OK]\033[0m"
 
+publish: test lint
+	@npm publish
+
 test: test-environments
 
 test-environments:
