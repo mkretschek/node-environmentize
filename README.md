@@ -4,10 +4,11 @@ environmentize (e12e)
 Utilities for handling value and behavior differences between environments.
 
 [![Build Status](https://travis-ci.org/mkretschek/node-environmentize.png?branch=master)](https://travis-ci.org/mkretschek/node-environmentize)
+[![NPM version](https://badge.fury.io/js/environmentize.png)](http://badge.fury.io/js/environmentize)
 
-`environmentize` helps you setting different values for each environment
+`environmentize` helps you to set different values for each environment
 your code runs in. For example, you probably have different database
-settings for each environment. Or you probably want to use an analytics
+settings for each environment or you probably want to use an analytics
 code only in production. `environmentize` helps you getting it done:
 
 ```javascript
