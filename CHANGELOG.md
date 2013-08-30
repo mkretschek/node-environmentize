@@ -1,3 +1,16 @@
+0.1.2 / 2013-08-30
+==================
+
+* fixed: cleaned up an unused variable.
+* updated: CHANGELOG.md
+
+
+0.1.1 / 2013-08-30
+==================
+
+* fixed: environment methods were not being created and tests were missing
+  it. Fixed both code and tests.
+
 
 0.1.0 / 2013-08-28
 ==================
