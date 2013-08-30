@@ -1,3 +1,10 @@
+0.1.3 / 2013-08-30
+==================
+
+* fixed: functions passed as values are no longer executed regardless of
+  the environment. Updated code and tests.
+
+
 0.1.2 / 2013-08-30
 ==================
 
