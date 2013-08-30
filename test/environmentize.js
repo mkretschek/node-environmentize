@@ -30,6 +30,16 @@
     });
 
 
+    it('has environment methods set', function () {
+      var envs = e12e.settings.environments,
+        len, i;
+      for (i = 0, len = envs.length; i < len; i += 1) {
+        expect(e12e).to.have.property(envs[i]);
+        expect(e12e[envs[i]]).to.be.a('function');
+      }
+    });
+
+
     it('returns the current environment if called without arguments',
       function () {
         expect(e12e()).to.be(e12e.env);
