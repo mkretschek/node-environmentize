@@ -1,7 +1,7 @@
 {
   "name": "environmentize",
   "description": "Utilities for handling differences between environments.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Mathias Kretschek <mathias@kretschek.com.br> (http://mathias.ms)",
   "contributors": [
     "Mathias Kretschek <mathias@kretschek.com.br>"
