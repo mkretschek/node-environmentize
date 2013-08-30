@@ -40,6 +40,21 @@
     });
 
 
+    it('executes functions passed as values only for matching environments',
+      function () {
+        e12e(
+          'fakeenv', // an environment that's not going to be tested
+          function () { expect().fail('Should not be called. Wrong env!'); }
+        );
+
+        e12e(
+          e12e.env,
+          null,
+          function () { expect().fail('Should not be called. Wrong env!'); }
+        );
+      });
+
+
     it('returns the current environment if called without arguments',
       function () {
         expect(e12e()).to.be(e12e.env);
