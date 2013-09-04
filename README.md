@@ -155,7 +155,7 @@ e12e.production(function () {
 ```
 
 
-Configuration   {#configuration}
+Configuration
 -------------
 
 You can use your own environment definitions using `e12e.setup()`:
