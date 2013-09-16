@@ -142,7 +142,7 @@
     it('exposes an env property', function () {
       expect(e12e.env).not.to.be(undefined);
       expect(e12e.env).to.be.a('string');
-      expect(e12e.env).to.be(process.env.NODE_ENV);
+      expect(e12e.env).to.be(process.env.NODE_ENV || e12e.settings.defaultEnv);
     });
 
 
