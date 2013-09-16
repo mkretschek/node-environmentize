@@ -1,3 +1,10 @@
+0.1.4 / 2013-09-16
+==================
+
+* fixed: tests now run without errors if NODE_ENV is not set.
+* fixed: updated dependencies versions.
+
+
 0.1.3 / 2013-08-30
 ==================
 
