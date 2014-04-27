@@ -63,8 +63,10 @@ need to change `e12e.env` yourself.
 By default, environmentize sets five environments: `'development'`, `'test'`,
 `'integration'`, `'staging'` and `'production'`. If you have a different
 environment structure, you can change them using
-[`e12e.setup()`](#configuration). The following examples assume we continue
-in the `'development'` environment.
+[`e12e.setup()`](#configuration).
+
+**NOTE:** The following examples assume we are in the `'development'`
+environment, unless stated otherwise.
 
 Check if the code is being run in a given environment:
 
