@@ -14,7 +14,7 @@
     "url": "https://github.com/mkretschek/node-environmentize"
   },
   "scripts": {
-    "test": "grunt mochaTest"
+    "test": "grunt test"
   },
   "dependencies": {
     "underscore": "^1.6.0"

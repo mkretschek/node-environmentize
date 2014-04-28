@@ -30,7 +30,11 @@ module.exports = function(grunt) {
   // Load the mocha runner plugin
   grunt.loadNpmTasks('grunt-mocha-test');
 
+
+  // Test tasks
+  grunt.registerTask('test', ['jshint', 'mochaTest']);
+
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'mochaTest']);
+  grunt.registerTask('default', ['test']);
 
 };
