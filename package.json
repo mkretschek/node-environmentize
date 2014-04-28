@@ -1,7 +1,7 @@
 {
   "name": "environmentize",
   "description": "Utilities for handling differences between environments.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Mathias Kretschek <mathias@kretschek.com.br> (http://mathias.ms)",
   "contributors": [
     "Mathias Kretschek <mathias@kretschek.com.br>"
@@ -17,12 +17,12 @@
     "test": "make test"
   },
   "dependencies": {
-    "underscore": "~1.5.1"
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
-    "expect.js": "~0.2.0",
-    "jshint": "~2.1.10",
-    "mocha": "~1.13.0"
+    "expect.js": "~0.3.1",
+    "jshint": "~2.5.0",
+    "mocha": "~1.18.2"
   },
   "engines": {
     "node": ">= 0.8.x"
