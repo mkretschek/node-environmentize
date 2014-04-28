@@ -1,3 +1,11 @@
+0.1.5 / 2014-04-28
+==================
+
+* changed: moved from Makefile to Gruntfile, since it was being quite
+  troublesome to work with `make` in Windows environments.
+* dropped: official support for Node 0.8.
+
+
 0.1.4 / 2013-09-16
 ==================
 
