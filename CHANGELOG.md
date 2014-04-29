@@ -1,3 +1,10 @@
+0.1.6 / 2014-04-29
+==================
+
+* fixed: restored support for Node 0.8. It turned out to be just an issue
+  with npm and versions starting with '^'.
+
+
 0.1.5 / 2014-04-28
 ==================
 
