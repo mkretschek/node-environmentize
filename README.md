@@ -6,6 +6,7 @@ Utilities for handling value and behavior differences between environments.
 [![Build Status](https://travis-ci.org/mkretschek/node-environmentize.png?branch=master)](https://travis-ci.org/mkretschek/node-environmentize)
 [![NPM version](https://badge.fury.io/js/environmentize.png)](http://badge.fury.io/js/environmentize)
 [![Dependency Status](https://gemnasium.com/mkretschek/node-environmentize.png)](https://gemnasium.com/mkretschek/node-environmentize)
+[![Coverage Status](https://coveralls.io/repos/mkretschek/node-environmentize/badge.png?branch=master)](https://coveralls.io/r/mkretschek/node-environmentize?branch=master)
 
 `environmentize` helps you to set different values for each environment
 your code runs in. For example, you probably have different database
