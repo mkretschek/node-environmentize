@@ -20,6 +20,7 @@
     "underscore": "~1.6.0"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "0.0.3",
     "coveralls": "^2.10.1",
     "expect.js": "~0.3.1",
     "grunt": "~0.4.4",
